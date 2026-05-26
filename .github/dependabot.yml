@@ -1,0 +1,42 @@
+version: 2
+updates:
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Note: This project currently uses JAR files directly (jsoup, selenium)
+  # To enable automatic dependency updates for Java, consider migrating to:
+  # - Maven: Add pom.xml and uncomment the maven section below
+  # - Gradle: Add build.gradle and uncomment the gradle section below
+
+  # Uncomment this section if you migrate to Maven:
+  # - package-ecosystem: "maven"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   labels:
+  #     - "dependencies"
+  #     - "java"
+  #   commit-message:
+  #     prefix: "chore"
+  #     include: "scope"
+
+  # Uncomment this section if you migrate to Gradle:
+  # - package-ecosystem: "gradle"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   labels:
+  #     - "dependencies"
+  #     - "java"
+  #   commit-message:
+  #     prefix: "chore"
+  #     include: "scope"
